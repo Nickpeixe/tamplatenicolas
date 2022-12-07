@@ -31,85 +31,59 @@ public class ExercicioUm {
         switch (menu) {
             // 1) Crie um programa que calcule a média (`(nota1 + nota2 + nota3 / 3)`)
             case 1:
-                // media(double notaUm, double notaDois, double notaTres)
-                System.out.println("Calculando média");
-                double res1 = media(8, 7, 9);
-                System.out.println(" O valor da média é " +res1);
-               
+                System.out.println("Os números utilizados são: 5, 7, 10");
+                double valorMedia = media(5, 7, 10);
+                System.out.println("A média dos números é: " + valorMedia);
                 break;
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:
                 // area(double ladoUm, double ladoDois)
-                System.out.println("Calculando a área");
-                double res2 = area(8,8);
-                System.out.println("O valor da área é "+res2);
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:
                 // volume(double largura, double altura, double profundidade)
-                System.out.println("Calculando o volume");
-                double res3 = volume(5,5,5);
-                System.out.println("O valor do volume é "+res3);
                 break;
-            // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
+            // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro
+            // valor
             case 4:
-                // valorMaiorQueDobro(double base, double verificar)
-                System.out.println("Verificar se um valor é maior que o dobro de outro valor");
-                boolean res4 = valorMaiorQueDobro(2,8);
-                if(res4==true){
-                    System.out.println("O valor é maior que o dobro do outro valor");
-                } else {
-                    System.out.println("O valor é menor que o dobro do outro valor");
-                }
+                valorMaiorQueDobro(4, 9);
                 break;
             // 5) Crie um programa que calcule _bhaskara_
             case 5:
-                // bhaskara(int a, int b, int c);
-                System.out.println("Calculando bhaskara");
-                double[] res5 = bhaskara(2,6,-5);
-                System.out.println("O valor de x' é " 
-                +res5[0] 
-                + " e x'' é " 
-                + res5[1]);
+                bhaskara(1, 4, 1);
                 break;
-            // 6) Crie um programa que calcule a velocidade média de uma viagem (`distancia (km) / tempo (h)`)
+            // 6) Crie um programa que calcule a velocidade média de uma viagem (`distancia
+            // (km) / tempo (h)`)
             case 6:
                 // mediaViagem(double distancia, double tempo)
-                System.out.println("Calculando velocidade média");
-                double res6 = mediaViagem(5,5);
-                System.out.println("O valor da velocidade média é " + res6);
                 break;
-            // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \ qtd imposto`)
+            // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \
+            // qtd imposto`)
             case 7:
                 // percentualImposto(double faturamento, double qtdImposto)
                 break;
             // 8) Crie um programa que teste se um valor é par ou ímpar
             case 8:
                 // parOuImpar(int valor)
-                System.out.println("Verificando se o valor é par ou impar");
-                boolean res7 = parOuImpar(31);
-                if(res7 == true) {
-                    System.out.println("O valor é par");
-                } else {
-                    System.out.println("O valor é impar");
-                }
                 break;
             // 9) Crie um programa que compare dois valores Strings
             case 9:
                 // compareString(String stringUm, String stringDois)
                 break;
-            // 10) Crie um programa que tenha uma variável com ponto em String e converta seu valor para inteiro
+            // 10) Crie um programa que tenha uma variável com ponto em String e converta
+            // seu valor para inteiro
             case 10:
                 // convertString(String valor);
                 break;
-            // 11) Crie um programa que receba o salário e diga o valor de imposto de renda conforme abaixo:
-            // Base                     | Alíquota
-            // ---------                | ------
-            // Até 1.903,98             | Isento
+            // 11) Crie um programa que receba o salário e diga o valor de imposto de renda
+            // conforme abaixo:
+            // Base | Alíquota
+            // --------- | ------
+            // Até 1.903,98 | Isento
             // De 1.903,99 até 2.826,65 | 7,5%
             // De 2.826,66 até 3.751,05 | 15%
             // De 3.751,06 até 4.664,68 | 22,5%
-            // Acima de 4.664,68        | 27,5%
+            // Acima de 4.664,68 | 27,5%
             case 11:
                 // percentualImpostoSalario(double salario);
                 break;
@@ -124,27 +98,19 @@ public class ExercicioUm {
     }
 
     public static double media(double notaUm, double notaDois, double notaTres) {
-
-        double median = (notaUm + notaDois + notaTres)/3;
-        return median;
+        return (notaUm + notaDois + notaTres) / 3;
     }
 
     public static double area(double ladoUm, double ladoDois) {
-
-        double areal = ladoUm * ladoDois;
-        return areal;
+        return 0;
     }
 
     public static double volume(double largura, double altura, double profundidade) {
-
-        
-        double vol = largura * altura * profundidade;
-        return vol;
+        return 0;
     }
 
     public static boolean valorMaiorQueDobro(double base, double verificar) {
-
-        if((base*2) > verificar){
+        if (base > verificar * 2) {
             return true;
         } else {
             return false;
@@ -152,32 +118,38 @@ public class ExercicioUm {
     }
 
     public static double[] bhaskara(int a, int b, int c) {
-        double delta = (b*b)-(4*a*c);
-        double bhaskarar[] = new double []{0,1};
-        bhaskarar[0] = ((-b)+Math.sqrt(delta))/2*a;
-        bhaskarar[1] = ((-b)-Math.sqrt(delta))/2*a;
-        
-        return bhaskarar;
+        double delta = (b * b) - (4 * a * c);
+        double x1 = 0;
+        double x2 = 0;
+        if (delta < 0) {
+            System.out.println("Delta é negativo");
+        } else if (delta == 0) {
+            x1 = -b / (2 * a);
+            x2 = x1;
+        } else {
+            x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        }
+        System.out.println(x1);
+        System.out.println(x2);
+        return new double[] { x1, x2 };
     }
 
     public static double mediaViagem(double distancia, double tempo) {
-        double mediaV= distancia * tempo;
-        return mediaV;
-    }
-
-    public static double percentualImposto(double faturamento, double qtdImposto) {
-        // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \ qtd imposto`)
-
         return 0;
     }
 
+    public static double percentualImposto(double faturamento, double qtdImposto) {
+        /**
+         * faturamento - 100
+         * qtdImposto - x
+         */
+
+        return (qtdImposto * 100) / faturamento;
+    }
+
     public static boolean parOuImpar(int valor) {
-        // 8) Crie um programa que teste se um valor é par ou ímpar
-        if(valor%2==0) {
-            return true;
-        } else {
-            return false;
-        }  
+        return false;
     }
 
     public static boolean compareString(String stringUm, String stringDois) {
@@ -185,34 +157,34 @@ public class ExercicioUm {
     }
 
     public static int convertString(String valor) {
-        return 0;
+        double valorDouble = Double.parseDouble(valor);
+        int valorInteiro = (int) valorDouble;
+        return valorInteiro;
     }
 
     public static double percentualImpostoSalario(double salario) {
-        // 11) Crie um programa que receba o salário e diga o valor de imposto de renda conforme abaixo:
-            // Base                     | Alíquota
-            // ---------                | ------
-            // Até 1.903,98             | Isento
-            // De 1.903,99 até 2.826,65 | 7,5%
-            // De 2.826,66 até 3.751,05 | 15%
-            // De 3.751,06 até 4.664,68 | 22,5%
-            // Acima de 4.664,68        | 27,5%
-        if(salario<=1903.98){
-            return 1;
-        } else if (salario>1903.98 && salario<=2826.65) {
-            return 2;
-        } else if (salario>2826.65 && salario<=3751.05) {
-            return 3;
-        } else if (salario>3751.05 && salario<=4664.68) {
-            return 4;
-        } else if (salario>4664.68){
-            return 5;
-        } 
-        return 0;
+        double percentual = -1;
+        if (salario <= 1903.98) {// Até 1.903,98 | Isento
+            percentual = 0;
+        } else if (salario <= 1903.99 && salario >= 2826.65) { // De 1.903,99 até 2.826,65 | 7,5%
+            percentual = 7.5;
+        } else if (salario <= 2826.66 && salario >= 3751.05) { // De 2.826,66 até 3.751,05 | 15%
+            percentual = 15;
+        } else if (salario <= 3751.06 && salario >= 5664.68) { // De 3.751,06 até 4.664,68 | 22,5%
+            percentual = 22.5;
+        } else if (salario > 4664.68) { // Acima de 4.664,68 | 27,5%
+            percentual = 27.5;
+        }
+        return percentual;
     }
 
     public static boolean testePrimo(int valor) {
-        return false;
+        for (int i = 2; i < valor; i++) {
+            if (valor % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

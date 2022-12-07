@@ -36,7 +36,14 @@ public class ExercicioTres {
         switch (menu) {
             // 1) Crie um programa que receba um valor e calcule a tabuada deste valor, salvando seu resultado em um arquivo de texto.
             case 1:
-                // tabuada(int number);
+                    
+                System.out.println("Programa Tabuada");
+                System.out.println("Informea Tabuadaa ser Informada:  ");
+                int numero = scanner.nextInt();
+                System.out.println(numero);
+                tabuada(numero);
+            
+                // tabuada(number);
                 break;
             // 2) Crie um programa que leia e imprima no console todas as linhas de um arquivo de texto.
             case 2:
@@ -85,8 +92,12 @@ public class ExercicioTres {
         
     }
 
-    public static void tabuada(int numero) {
-        
+    public static void tabuada(int number) {
+        int[] veto = new int[10];
+        for(int i = 1; i <= 10; i++){
+            veto[i - 1] = number * i;
+        }
+    
     }
 
     public static void lerArquivoTexto(String arquivo) {
