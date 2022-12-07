@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
-//import java.util.stream.IntStream;
+
 
 public class ExercicioQuatro {
     public static void call(Scanner scanner) {

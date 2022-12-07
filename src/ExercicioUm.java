@@ -38,6 +38,7 @@ public class ExercicioUm {
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:
                 // area(double ladoUm, double ladoDois)
+                area(12, 32);
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:
@@ -56,19 +57,23 @@ public class ExercicioUm {
             // (km) / tempo (h)`)
             case 6:
                 // mediaViagem(double distancia, double tempo)
+                mediaViagem(1200, 16);
                 break;
             // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \
             // qtd imposto`)
             case 7:
                 // percentualImposto(double faturamento, double qtdImposto)
+                percentualImposto(1000, 0.15);
                 break;
             // 8) Crie um programa que teste se um valor é par ou ímpar
             case 8:
                 // parOuImpar(int valor)
+                parOuImpar(10);
                 break;
             // 9) Crie um programa que compare dois valores Strings
             case 9:
                 // compareString(String stringUm, String stringDois)
+                compareString("Testando", "Testando");
                 break;
             // 10) Crie um programa que tenha uma variável com ponto em String e converta
             // seu valor para inteiro
@@ -102,6 +107,9 @@ public class ExercicioUm {
     }
 
     public static double area(double ladoUm, double ladoDois) {
+        System.out.println("Calculo área!");
+        double area = ladoUm * ladoDois;
+        System.out.println("A area total é " + area + " m²");
         return 0;
     }
 
@@ -136,24 +144,36 @@ public class ExercicioUm {
     }
 
     public static double mediaViagem(double distancia, double tempo) {
+        System.out.println("Calcule a média de km/h feita na viagem");
+        double mediaViagem = distancia / tempo;
+        System.out.println("Foi realizado uma média de " + mediaViagem + " km/H");
+
         return 0;
     }
 
     public static double percentualImposto(double faturamento, double qtdImposto) {
-        /**
-         * faturamento - 100
-         * qtdImposto - x
-         */
-
-        return (qtdImposto * 100) / faturamento;
+        System.out.println("Calcule o percentual de imposto pago");
+        double percentualImposto = faturamento * qtdImposto;
+        System.out.println("O percentual de imposto pago é " + percentualImposto);
+        return 0;
     }
 
-    public static boolean parOuImpar(int valor) {
-        return false;
+    public static void parOuImpar(int valor) {
+        System.out.println("Verifique se o valor é par ou ímpar");
+        if (valor % 2 == 0) {
+            System.out.println("O valor é par");
+        } else {
+            System.out.println("O valor é ímpar");
+        }
     }
 
-    public static boolean compareString(String stringUm, String stringDois) {
-        return false;
+    public static void compareString(String stringUm, String stringDois) {
+        System.out.println("Compare duas strings");
+        if (stringUm.equals(stringDois)) {
+            System.out.println("As strings são iguais");
+        } else {
+            System.out.println("As strings são diferentes");
+        }
     }
 
     public static int convertString(String valor) {

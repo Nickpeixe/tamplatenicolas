@@ -4,10 +4,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
 
 public class ExercicioTres {
+    private static Random scanner;
+
     public static void call(Scanner scanner) {
         System.out.println("=== EXERCÍCIOS - LISTA 3 ===");
 
@@ -36,14 +39,8 @@ public class ExercicioTres {
         switch (menu) {
             // 1) Crie um programa que receba um valor e calcule a tabuada deste valor, salvando seu resultado em um arquivo de texto.
             case 1:
-                    
-                System.out.println("Programa Tabuada");
-                System.out.println("Informea Tabuadaa ser Informada:  ");
-                int numero = scanner.nextInt();
-                System.out.println(numero);
-                tabuada(numero);
-            
-                // tabuada(number);
+                 int numero= 10;
+                tabuada( numero);
                 break;
             // 2) Crie um programa que leia e imprima no console todas as linhas de um arquivo de texto.
             case 2:
@@ -92,16 +89,53 @@ public class ExercicioTres {
         
     }
 
-    public static void tabuada(int number) {
-        int[] veto = new int[10];
-        for(int i = 1; i <= 10; i++){
-            veto[i - 1] = number * i;
-        }
-    
+    public static void tabuada(int numero) {
+        
+        numero = scanner.nextInt();
+        System.out.println(numero);
+        tabuada(numero);
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("tabuada.txt"));
+            writer.write("Tabuada do " + numero);
+            writer.newLine();
+            for (int i = 1; i <= 10; i++) {
+                writer.write(numero + " x " + i + " = " + (numero * i));
+                writer.newLine();
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        
+
     }
+}
 
     public static void lerArquivoTexto(String arquivo) {
         
+        System.out.printf("Informe o Nome de Arquivo Texto:\n");
+        Scanner scanner = new Scanner(System.in);
+        String nome = scanner.nextLine();
+
+        System.out.printf("\nConteúdo do Arquivo Texto:\n");
+        try {
+            FileReader arq = new FileReader(nome);
+            BufferedReader lerArq = new BufferedReader(arq);
+
+            
+            String linha = lerArq.readLine();
+            while (linha != null) {
+                System.out.printf("%s\n", linha);
+
+                linha = lerArq.readLine(); 
+            }
+            arq.close();
+
+        } catch (IOException e) {
+            System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
+        }
+      
+   
+    }
     }
 
     public static int[] operacoesBasicas(int numeroUm, int numeroDois) {
@@ -113,8 +147,19 @@ public class ExercicioTres {
     }
 
     public static void aleatorizarPessoas(String pessoas[]) {
-        
-    }
+        HashSet<String> hash5 = new HashSet<String>();
+        Scanner ent5 = new Scanner(System.in);
+        System.out.println("Kadu Floresta");
+
+      
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Digite o " + (i + 1) + "º Nome: ");
+            String aux = ent5.nextLine();
+            hash5.add(aux);
+
+        }
+        System.out.println(hash5);
 
     public static double[] areaECircunferencia(double raio) {
         return new double[2];
@@ -129,7 +174,30 @@ public class ExercicioTres {
     }
 
     public static double calculaArea(double numeroUm, double numeroDois) {
-        return 0;
+        int A = 0;
+        int B = 0;
+        int adic;
+        int subtr;
+        int multip;
+        int div;
+
+        System.out.println("Digite o 1º valor: ");
+        A = scanner.nextInt();
+        System.out.println("Digite o 2º valor: ");
+        B = scanner.nextInt();
+
+        adic = ((A + B));
+        subtr = (A - B);
+        multip = (A * B);
+        div = (A / B);
+
+        System.out.println("\n" + A + " + " + B + " = " + adic);
+        System.out.println(+A + " - " + B + " = " + subtr);
+        System.out.println(+A + " * " + B + " = " + multip);
+        System.out.println(+A + " / " + B + " = " + div);
+        return div;
+        
+
     }
 
     public static double somaValoresArquivo(String arquivo) {

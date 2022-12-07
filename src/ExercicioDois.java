@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class ExercicioDois {
 
-
     public static void call(Scanner scanner) {
         System.out.println("=== EXERCÍCIOS - LISTA 2 ===");
 
@@ -30,7 +29,9 @@ public class ExercicioDois {
         }
 
         switch (menu) {
-            // 1) Crie um programa que receba três notas calcule a média e diga se foi aprovado (`(nota1 + nota2 + nota3 / 3)`) e (`média maior que 7 para ser aprovado`).
+            // 1) Crie um programa que receba três notas calcule a média e diga se foi
+            // aprovado (`(nota1 + nota2 + nota3 / 3)`) e (`média maior que 7 para ser
+            // aprovado`).
             case 1:
                 // calculaMedia(double notaUm, double notaDois, double notaTres);
                 break;
@@ -38,7 +39,11 @@ public class ExercicioDois {
             case 2:
                 // qualMes(int mes);
                 break;
-            // 3) Crie um programa que simule um jogo da forca, com a entrada da palavra oculta, a quantidade de tentativas para acerto e depois solicite a entrada da palavra. A cada erro deve imprimir a quantidade de tentativas restantes e o 'membro' que foi marcado. Ao final deve imprimir se acertou ou não a palavra e se foi 'enforcado'.
+            // 3) Crie um programa que simule um jogo da forca, com a entrada da palavra
+            // oculta, a quantidade de tentativas para acerto e depois solicite a entrada da
+            // palavra. A cada erro deve imprimir a quantidade de tentativas restantes e o
+            // 'membro' que foi marcado. Ao final deve imprimir se acertou ou não a palavra
+            // e se foi 'enforcado'.
             case 3:
                 System.out.println("Digite a palavra oculta");
                 String palavra = scanner.next();
@@ -65,7 +70,8 @@ public class ExercicioDois {
             case 4:
                 // tabuada(int numero);
                 break;
-            // 5) Crie um programa que receba uma String e imprima linha a linha suas letras.
+            // 5) Crie um programa que receba uma String e imprima linha a linha suas
+            // letras.
             case 5:
                 System.out.println("Digite a palavra: ");
                 String palavraLetraALetra = scanner.next();
@@ -75,23 +81,27 @@ public class ExercicioDois {
                     System.out.println(letra);
                 }
                 break;
-            // 6) Crie um programa que de a soma de todos os números ímpares e múltiplos de 7 entre 1 e 500.
+            // 6) Crie um programa que de a soma de todos os números ímpares e múltiplos de
+            // 7 entre 1 e 500.
             case 6:
                 System.out.println("A soma dos número ímpares e múltiplos de 7 entre 1 e 500 é: " + numerosImpares());
                 // numerosImpares();
                 break;
-            // 7) Crie um programa que tenha como entrada as notas de um aluno. Somente se encerrará quando for inserida uma nota negativa. Ao final deverá informar a média das notas.
+            // 7) Crie um programa que tenha como entrada as notas de um aluno. Somente se
+            // encerrará quando for inserida uma nota negativa. Ao final deverá informar a
+            // média das notas.
             case 7:
                 // calculaMedia(double[] notas);
                 break;
-            // 8) Crie um programa que receba um valor e imprima o fatorial desse número. Ex.: 3! = 3 x 2 x 1 = 6.
+            // 8) Crie um programa que receba um valor e imprima o fatorial desse número.
+            // Ex.: 3! = 3 x 2 x 1 = 6.
             case 8:
                 System.out.println("Digite o número: ");
                 int numero = scanner.nextInt();
                 System.out.print(fatorial(numero));
                 break;
             // 9) Crie um programa que receba a altera e o peso e calcule o IMC:
-            // 
+            //
             // IMC | Classificação
             // --- | ------
             // Abaixo de 18,5 | Abaixo do Peso
@@ -116,11 +126,12 @@ public class ExercicioDois {
                     System.out.println("Obesidade Grau I");
                 } else if (imc >= 35 && imc <= 39.9) {
                     System.out.println("Obesidade Grau II");
-                } else if (imc >= 40) {    
+                } else if (imc >= 40) {
                     System.out.println("Obesidade Grau III (mórbida)");
                 }
                 break;
-            // 10) Crie um programa que receba dois valores e solicite a operação a ser realizada (+ - * /). Ao final imprima o resultado.
+            // 10) Crie um programa que receba dois valores e solicite a operação a ser
+            // realizada (+ - * /). Ao final imprima o resultado.
             case 10:
                 System.out.println("Digite o primeiro valor");
                 int valorUm = scanner.nextInt();
@@ -135,7 +146,9 @@ public class ExercicioDois {
 
                 System.out.println("O valor da operação é " + resultado);
                 break;
-            // DESAFIO: Crie um programa que receba um valor em reais e determine qual o mínimo de notas necessárias para entregá-lo. <br> Notas: R$ 200, R$ 100, R$ 50, R$ 10, R$ 5, R$ 1 <br> Exemplo: R$ 15 -> 1 nota de R$ 10 e 1 nota de R$ 5
+            // DESAFIO: Crie um programa que receba um valor em reais e determine qual o
+            // mínimo de notas necessárias para entregá-lo. <br> Notas: R$ 200, R$ 100, R$
+            // 50, R$ 10, R$ 5, R$ 1 <br> Exemplo: R$ 15 -> 1 nota de R$ 10 e 1 nota de R$ 5
             case 11:
                 System.out.println("Digite o valor em reais: ");
                 double valor = scanner.nextDouble();
@@ -207,11 +220,11 @@ public class ExercicioDois {
                 resultado = valorUm - valorDois;
                 break;
             case '*':
-                resultado =  valorUm * valorDois;
+                resultado = valorUm * valorDois;
                 break;
             case '/':
                 resultado = (double) valorUm / valorDois;
-                break;        
+                break;
             default:
                 break;
         }
@@ -219,35 +232,10 @@ public class ExercicioDois {
     }
 
     public static int[] notasNecessarias(double valor) {
-        /*
-         * [0] - notas 200
-         * [1] - notas 100
-         * [2] - notas 50
-         * [3] - notas 10
-         * [4] - notas 5
-         * [5] - notas 1
-         */
+
         double[] notas = new double[] { 200, 100, 50, 20, 10, 5, 1, 0.5 };
         int[] valorNotas = new int[notas.length];
 
-        // 250 / 200 = 1
-        /*valorNotas[0] = (int) (valor / 200);
-        valor -= valorNotas[0] * 200; // 50
-
-        valorNotas[1] = (int) (valor / 100);
-        valor -= valorNotas[1] * 100;
-
-        valorNotas[2] = (int) (valor / 50);
-        valor -= valorNotas[2] * 50;
-
-        valorNotas[3] = (int) (valor / 10);
-        valor -= valorNotas[3] * 10;
-
-        valorNotas[4] = (int) (valor / 5);
-        valor -= valorNotas[4] * 5;
-
-        valorNotas[5] = valor;*/
-        
         for (int i = 0; i < notas.length; i++) {
             valorNotas[i] = (int) (valor / notas[i]);
             valor -= valorNotas[i] * notas[i];

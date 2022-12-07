@@ -9,5 +9,17 @@ public class Pessoa {
     public String imcTexto() {
         return "";
     }
+    public String getNome() {
+        return null;
+    }
+    public String getPeso() {
+        return null;
+    }
+    public String getAltura() {
+        return null;
+    }
+    public String getDataNascimento() {
+        return null;
+    }
     
 }

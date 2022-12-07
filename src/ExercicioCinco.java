@@ -25,6 +25,7 @@ public class ExercicioCinco {
         switch (menu) {
             // 1) Crie uma classe que represente uma Pessoa, devendo ter as propriedades Nome, Peso, Altura e Data de Nascimento e o método IMC, que retornará o valor do IMC.
             case 1:
+                // criarPessoa();
                 criarPessoa();
                 break;
             /* 2) Crie um programa que receba a pessoa criada e verifique qual o IMC.
@@ -37,24 +38,29 @@ public class ExercicioCinco {
             Entre 30,0 e 34,9 | Obesidade Grau I
             Entre 35,0 e 39,9 | Obesidade Grau II
             Acima de 40       | Obesidade Grau III (mórbida)
-            */         
+            */                
             case 2:
+                // verificarIMC();
                 verificarIMC();
                 break;
             // 3) Crie uma classe que represente uma Conta Corrente, devendo ter as propriedades Número da Conta, Agência, Saldo, Nome do Titular e os métodos Depósito, Saque e Saldo Total.
             case 3:
                 // contaCorrente();
+                contaCorrente();
                 break;
             // 4) Crie um programa que receba a conta corrente e deposite e saque valores, ao final imprimindo o saldo existente.
             case 4:
                 // depositarValores();
+                depositarValores();
                 break;
             // 5) Crie uma classe que calcule a área de uma circunferência, recebendo com valor inicial o raio
             case 5:
                 // circunferencia();
+                circunferencia();
                 break;
             // 6) Crie uma classe para Cifra de César, devendo ter um método criptografia e receba como valor inicial uma mensagem e o valor constante. Cifra de César é uma das criptografias mais antigas conhecidas, onde a chave está no valor constante, para cada letra do alfabeto atribuí-se um número (exemplo: A=1;B=2;C=3,etc), então para cada letra da mensagem, soma-se o valor correspondente a esta letra ao valor constante, gerando uma nova letra para formar a nova mensagem, ou seja, a mensagem "Ataque a roma" com um valor constante de 3 seria "dwdtxh d urpd". Dica, utilize arrays para isso.
             case 6:
+                // cifraCesar();
                 cifraCesar();
                 break;
             default:
@@ -65,61 +71,136 @@ public class ExercicioCinco {
     }
 
     public static void criarPessoa() {
-        Pessoa pessoa = new Pessoa("Jackson", 79, 1.70, "31/03/1990");
-        System.out.println(
-            "Nome: " + pessoa.nome + "\n"
-            + "Peso: " + pessoa.peso + "\n"
-            + "Altura: " + pessoa.altura + "\n"
-            + "Data de Nascimento: " + pessoa.dataNascimento + "\n"
-            + "IMC: " + pessoa.imc()
-        );
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 1 - CRIAR PESSOA ===");
+
+            System.out.println("Digite o nome da pessoa: ");
+            String nome = scanner.nextLine();
+
+            System.out.println("Digite o peso da pessoa: ");
+            double peso = scanner.nextDouble();
+
+            System.out.println("Digite a altura da pessoa: ");
+            double altura = scanner.nextDouble();
+
+            System.out.println("Digite a data de nascimento da pessoa: ");
+            String dataNascimento = scanner.nextLine();
+
+            Pessoa pessoa = new Pessoa(nome, peso, altura, dataNascimento);
+
+            System.out.println("Pessoa criada com sucesso!");
+            System.out.println("Nome: " + pessoa.getNome());
+            System.out.println("Peso: " + pessoa.getPeso());
+            System.out.println("Altura: " + pessoa.getAltura());
+            System.out.println("Data de Nascimento: " + pessoa.getDataNascimento());
+        }
     }
 
     public static void verificarIMC() {
-        Pessoa pessoa = new Pessoa("Jackson", 79, 1.70, "31/03/1990");
-        System.out.println(
-            "Nome: " + pessoa.nome + "\n"
-            + "Peso: " + pessoa.peso + "\n"
-            + "Altura: " + pessoa.altura + "\n"
-            + "Data de Nascimento: " + pessoa.dataNascimento + "\n"
-            + "IMC: " + pessoa.imc() + "\n"
-            + "Calculo IMC: " + pessoa.imcTexto()
-        );
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 2 - VERIFICAR IMC ===");
+
+            System.out.println("Digite o nome da pessoa: ");
+            String nome = scanner.nextLine();
+
+            System.out.println("Digite o peso da pessoa: ");
+            double peso = scanner.nextDouble();
+
+            System.out.println("Digite a altura da pessoa: ");
+            double altura = scanner.nextDouble();
+
+            System.out.println("Digite a data de nascimento da pessoa: ");
+            String dataNascimento = scanner.nextLine();
+
+            Pessoa pessoa = new Pessoa(nome, peso, altura, dataNascimento);
+
+            System.out.println("IMC: " + pessoa.imc());
+        }
     }
 
     public static void contaCorrente() {
-        
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 3 - CRIAR CONTA CORRENTE ===");
+
+            System.out.println("Digite o número da conta: ");
+            int numeroConta = scanner.nextInt();
+
+            System.out.println("Digite o número da agência: ");
+            int numeroAgencia = scanner.nextInt();
+
+            System.out.println("Digite o saldo da conta: ");
+            double saldo = scanner.nextDouble();
+
+            System.out.println("Digite o nome do titular da conta: ");
+            String nomeTitular = scanner.nextLine();
+
+            ContaCorrente contaCorrente = new ContaCorrente(numeroConta, numeroAgencia, saldo, nomeTitular);
+
+            System.out.println("Conta corrente criada com sucesso!");
+            System.out.println("Número da conta: " + contaCorrente.getNumeroConta());
+            System.out.println("Número da agência: " + contaCorrente.getNumeroConta());
+            System.out.println("Saldo: " + contaCorrente.getSaldo());
+            System.out.println("Nome do titular: " + contaCorrente.getNomeTitular());
+        }
     }
 
     public static void depositarValores() {
-        
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 4 - DEPOSITAR VALORES ===");
+
+            System.out.println("Digite o número da conta: ");
+            int numeroConta = scanner.nextInt();
+
+            System.out.println("Digite o número da agência: ");
+            int numeroAgencia = scanner.nextInt();
+
+            System.out.println("Digite o saldo da conta: ");
+            double saldo = scanner.nextDouble();
+
+            System.out.println("Digite o nome do titular da conta: ");
+            String nomeTitular = scanner.nextLine();
+
+            ContaCorrente contaCorrente = new ContaCorrente(numeroConta, numeroAgencia, saldo, nomeTitular);
+
+            System.out.println("Digite o valor a ser depositado: ");
+            double valorDeposito = scanner.nextDouble();
+
+            contaCorrente.depositar(valorDeposito);
+
+            System.out.println("Valor depositado com sucesso!");
+            System.out.println("Saldo atual: " + contaCorrente.getSaldo());
+        }
     }
 
     public static void circunferencia() {
-        
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 5 - CIRCUNFERÊNCIA ===");
+
+            System.out.println("Digite o raio da circunferência: ");
+            double raio = scanner.nextDouble();
+
+            Circunferencia circunferencia = new Circunferencia(raio);
+
+            System.out.println("Circunferência criada com sucesso!");
+            System.out.println("Raio: " + circunferencia.getRaio());
+            System.out.println("Área: " + circunferencia.area());
+            System.out.println("Comprimento: " + circunferencia.getComprimento());
+        }
     }
 
     public static void cifraCesar() {
-        char[] alfabeto = new char[]{ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
-        String mensagem = "ataque a roma";
-        int seed = 1;
-        String mensagemCript = "";
-        
-        for (int contadorUm = 0; contadorUm < mensagem.length(); contadorUm++) {
-            char letra = mensagem.charAt(contadorUm);
-            if (letra != ' ') {
-                int letraIndice = 0;
-                for (int contadorDois = 0; contadorDois < alfabeto.length; contadorDois++) {
-                    if (alfabeto[contadorDois] == letra) {
-                        letraIndice = contadorDois;
-                        break;
-                    }
-                }
-                mensagemCript += alfabeto[letraIndice + seed];
-            } else {
-                mensagemCript += " ";
-            }
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("=== EXERCÍCIO 6 - CIFRA DE CESAR ===");
+
+            System.out.println("Digite o texto a ser criptografado: ");
+            String texto = scanner.nextLine();
+
+            System.out.println("Digite o número de casas: ");
+            int numeroCasas = scanner.nextInt();
+
+            CifraDeCesar cifraCesar = new CifraDeCesar(texto, numeroCasas);
+
+            System.out.println("Texto criptografado: " + cifraCesar.criptografar());
         }
-        System.out.println(mensagemCript);
     }
 }

@@ -10,4 +10,12 @@ public class Circunferencia {
     public double circunferencia() {
         return 0;
     }
+
+    public String getRaio() {
+        return null;
+    }
+
+    public String getComprimento() {
+        return null;
+    }
 }
